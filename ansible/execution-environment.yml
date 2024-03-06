@@ -1,5 +1,18 @@
-version: 1
+---
+version: 3
 
-dependencies: 
-  galaxy: requirements.yml
-#  python: requirements.txt
+images:
+  base_image:
+    name: quay.io/fedora/fedora:38
+
+dependencies:
+  system:
+    - openssh-clients
+  ansible_core:
+    package_pip: ansible-core ansible-lint
+  ansible_runner:
+    package_pip: ansible-runner
+  galaxy:
+    collections:
+      - name: community.general
+      - name: devsec.hardening
