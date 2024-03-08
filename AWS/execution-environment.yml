@@ -1,7 +1,8 @@
+---
 version: 1
 
 ansible_config: ansible.cfg
 
-dependencies: 
+dependencies:
   galaxy: requirements.yml
   python: requirements.txt
