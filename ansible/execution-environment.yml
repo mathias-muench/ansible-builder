@@ -3,16 +3,20 @@ version: 3
 
 images:
   base_image:
-    name: quay.io/fedora/fedora:38
+    name: quay.io/centos/centos:stream8
 
 dependencies:
-  system:
-    - openssh-clients
   ansible_core:
     package_pip: ansible-core ansible-lint
   ansible_runner:
     package_pip: ansible-runner
   galaxy:
     collections:
+      - name: ansible.posix
+      - name: amazon.aws
       - name: community.general
-      - name: devsec.hardening
+      - name: community.mysql
+      - name: community.postgresql
+      - name: containers.podman
+  python_interpreter:
+    package_system: "python38"
